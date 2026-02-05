@@ -11,7 +11,7 @@
           "value": "text/plain"
         }
       ],
-      "body": "SELECT DISTINCT\n    concat(\"HHA CCN\", ' - ', if(notEmpty(\"HHA DBA\"), \"HHA DBA\", \"HHA Name\")) as display_name,\n    \"HHA CCN\" as hha_id\nFROM hha_analytics.hha_mapping\nWHERE 1=1\n{{BrandSelect.selectedOptionValue ? `AND \\`HHA Brand Name\\` = '${BrandSelect.selectedOptionValue}'` : ''}}\nORDER BY display_name ASC\nFORMAT JSON",
+      "body": "SELECT DISTINCT\n    concat(\"HHA CCN\", ' - ', if(notEmpty(\"HHA DBA\"), \"HHA DBA\", \"HHA Name\")) as display_name,\n    \"HHA CCN\" as hha_id\nFROM hha_analytics.hha_mapping\nWHERE 1=1\n{{BrandSelect.selectedOptionValue && BrandSelect.selectedOptionValue !== '' && BrandSelect.selectedOptionValue !== null ? \" AND `HHA Brand Name` = '\" + BrandSelect.selectedOptionValue + \"'\" : ''}}\nORDER BY display_name ASC\nFORMAT JSON",
       "bodyFormData": [],
       "encodeParamsToggle": true,
       "formData": {

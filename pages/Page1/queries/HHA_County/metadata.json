@@ -11,7 +11,7 @@
           "value": "application/json"
         }
       ],
-      "body": "SELECT distinct `HHA County` FROM hha_analytics.hha_mapping FORMAT JSON",
+      "body": "SELECT DISTINCT `HHA County`\nFROM hha_analytics.hha_mapping\nWHERE 1=1\n{{HHAMultiSelect.selectedOptionValues && HHAMultiSelect.selectedOptionValues.length > 0 ? \" AND `HHA CCN` IN (\" + HHAMultiSelect.selectedOptionValues.map(displayName => {\n  const ccn = displayName.split(' - ')[0].trim();\n  return \"'\" + ccn + \"'\";\n}).join(', ') + \")\" : ''}}\n{{StateMultiSelect.selectedOptionValues && StateMultiSelect.selectedOptionValues.length > 0 ? \" AND `HHA State` IN (\" + StateMultiSelect.selectedOptionValues.map(state => \"'\" + state + \"'\").join(', ') + \")\" : ''}}\nORDER BY `HHA County` ASC\nFORMAT JSON",
       "bodyFormData": [],
       "encodeParamsToggle": true,
       "formData": {
@@ -23,7 +23,7 @@
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
         {
-          "value": true
+          "value": false
         }
       ],
       "queryParameters": [],
@@ -36,10 +36,14 @@
       "name": "clickhouse",
       "pluginId": "restapi-plugin"
     },
-    "dynamicBindingPathList": [],
+    "dynamicBindingPathList": [
+      {
+        "key": "body"
+      }
+    ],
     "name": "HHA_County",
     "pageId": "Page1",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }

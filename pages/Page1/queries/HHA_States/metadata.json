@@ -11,7 +11,7 @@
           "value": "text/plain"
         }
       ],
-      "body": "SELECT distinct `HHA State` FROM hha_analytics.hha_mapping  FORMAT JSON",
+      "body": "SELECT DISTINCT `HHA State`\nFROM hha_analytics.hha_mapping\nWHERE 1=1\n{{HHAMultiSelect.selectedOptionValues && HHAMultiSelect.selectedOptionValues.length > 0 ? \" AND `HHA CCN` IN (\" + HHAMultiSelect.selectedOptionValues.map(item => {\n  const ccn = item.split(' - ')[0].trim();\n  return \"'\" + ccn + \"'\";\n}).join(', ') + \")\" : ''}}\nORDER BY `HHA State` ASC\nFORMAT JSON",
       "bodyFormData": [],
       "encodeParamsToggle": true,
       "formData": {
@@ -23,7 +23,7 @@
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
         {
-          "value": true
+          "value": false
         }
       ],
       "queryParameters": [],
@@ -36,10 +36,14 @@
       "name": "clickhouse",
       "pluginId": "restapi-plugin"
     },
-    "dynamicBindingPathList": [],
+    "dynamicBindingPathList": [
+      {
+        "key": "body"
+      }
+    ],
     "name": "HHA_States",
     "pageId": "Page1",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }

@@ -1,1 +1,9 @@
-SELECT distinct `HHA State` FROM hha_analytics.hha_mapping  FORMAT JSON
+SELECT DISTINCT `HHA State`
+FROM hha_analytics.hha_mapping
+WHERE 1=1
+{{HHAMultiSelect.selectedOptionValues && HHAMultiSelect.selectedOptionValues.length > 0 ? " AND `HHA CCN` IN (" + HHAMultiSelect.selectedOptionValues.map(item => {
+  const ccn = item.split(' - ')[0].trim();
+  return "'" + ccn + "'";
+}).join(', ') + ")" : ''}}
+ORDER BY `HHA State` ASC
+FORMAT JSON

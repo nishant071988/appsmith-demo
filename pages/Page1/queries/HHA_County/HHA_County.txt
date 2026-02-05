@@ -1,1 +1,10 @@
-SELECT distinct `HHA County` FROM hha_analytics.hha_mapping FORMAT JSON
+SELECT DISTINCT `HHA County`
+FROM hha_analytics.hha_mapping
+WHERE 1=1
+{{HHAMultiSelect.selectedOptionValues && HHAMultiSelect.selectedOptionValues.length > 0 ? " AND `HHA CCN` IN (" + HHAMultiSelect.selectedOptionValues.map(displayName => {
+  const ccn = displayName.split(' - ')[0].trim();
+  return "'" + ccn + "'";
+}).join(', ') + ")" : ''}}
+{{StateMultiSelect.selectedOptionValues && StateMultiSelect.selectedOptionValues.length > 0 ? " AND `HHA State` IN (" + StateMultiSelect.selectedOptionValues.map(state => "'" + state + "'").join(', ') + ")" : ''}}
+ORDER BY `HHA County` ASC
+FORMAT JSON

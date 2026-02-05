@@ -3,6 +3,6 @@ SELECT DISTINCT
     "HHA CCN" as hha_id
 FROM hha_analytics.hha_mapping
 WHERE 1=1
-{{BrandSelect.selectedOptionValue ? `AND \`HHA Brand Name\` = '${BrandSelect.selectedOptionValue}'` : ''}}
+{{BrandSelect.selectedOptionValue && BrandSelect.selectedOptionValue !== '' && BrandSelect.selectedOptionValue !== null ? " AND `HHA Brand Name` = '" + BrandSelect.selectedOptionValue + "'" : ''}}
 ORDER BY display_name ASC
 FORMAT JSON
