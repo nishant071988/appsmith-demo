@@ -1,0 +1,1 @@
+SELECT distinct `HHA State` FROM hha_analytics.hha_mapping  FORMAT JSON

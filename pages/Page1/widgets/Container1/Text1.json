@@ -1,0 +1,52 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 11,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "0.875rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "zqakv4cyyp",
+  "leftColumn": 13,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 5,
+  "mobileLeftColumn": 13,
+  "mobileRightColumn": 29,
+  "mobileTopRow": 1,
+  "needsErrorInfo": false,
+  "originalBottomRow": 13,
+  "originalTopRow": 8,
+  "overflow": "NONE",
+  "parentColumnSpace": 17.625,
+  "parentId": "x4meo13drx",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 20,
+  "shouldTruncate": false,
+  "text": "HHA Overview",
+  "textAlign": "LEFT",
+  "textColor": "#0d9488",
+  "topRow": 7,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "jtn7hm1mnx",
+  "widgetName": "Text1"
+}

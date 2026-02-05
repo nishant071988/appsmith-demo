@@ -1,0 +1,77 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 5,
+  "boxShadow": "none",
+  "defaultOptionValue": "",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "labelTextSize"
+    },
+    {
+      "key": "optionLabel"
+    },
+    {
+      "key": "optionValue"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onOptionChange"
+    }
+  ],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "jn4uzw0d2g",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelStyle": "",
+  "labelText": "",
+  "labelTextSize": "0.5rem",
+  "labelWidth": 5,
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 5,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 10,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "onOptionChange": "",
+  "optionLabel": "HHA Brand Name",
+  "optionValue": "HHA Brand Name",
+  "parentColumnSpace": 10.703125,
+  "parentId": "m9ep8nfmj8",
+  "parentRowSpace": 10,
+  "placeholderText": "Brand Names",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 20,
+  "serverSideFiltering": false,
+  "sourceData": "{{HHA_Brand_Name.data.data}}",
+  "topRow": 0,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "bem2q3akg5",
+  "widgetName": "BrandSelect"
+}

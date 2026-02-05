@@ -1,0 +1,8 @@
+SELECT DISTINCT
+    concat("HHA CCN", ' - ', if(notEmpty("HHA DBA"), "HHA DBA", "HHA Name")) as display_name,
+    "HHA CCN" as hha_id
+FROM hha_analytics.hha_mapping
+WHERE 1=1
+{{BrandSelect.selectedOptionValue ? `AND \`HHA Brand Name\` = '${BrandSelect.selectedOptionValue}'` : ''}}
+ORDER BY display_name ASC
+FORMAT JSON

@@ -1,0 +1,1 @@
+SELECT distinct `HHA County` FROM hha_analytics.hha_mapping FORMAT JSON
